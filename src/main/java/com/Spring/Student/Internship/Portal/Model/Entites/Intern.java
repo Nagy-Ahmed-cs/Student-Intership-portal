@@ -1,32 +1,36 @@
 package com.Spring.Student.Internship.Portal.Model.Entites;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import groovy.lang.DelegatesTo;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.cglib.core.Local;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
-@Table(name="Companies")
+@Table(name="Interns")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 
-public class Company {
-    private String companyName;
+public class Intern {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer companyId;
-    private String filed;
+    private Integer internId;
+    private String internName;
     @CreationTimestamp
     private LocalDateTime createAt;
-    @JsonManagedReference
-    @OneToMany(mappedBy = "company")
-    private List<Intern>interns;
+    private Integer period;
+    private Integer capacity;
+    @JsonBackReference
+    @ManyToOne
+    @JoinColumn(name = "company_id")
+    private Company company;
 
 }
