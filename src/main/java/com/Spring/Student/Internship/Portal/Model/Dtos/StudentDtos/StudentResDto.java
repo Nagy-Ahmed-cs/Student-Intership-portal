@@ -1,11 +1,9 @@
-package com.Spring.Student.Internship.Portal.Model.Dtos;
+package com.Spring.Student.Internship.Portal.Model.Dtos.StudentDtos;
 
-import groovy.lang.DelegatesTo;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.cglib.core.Local;
 
 import java.time.LocalDateTime;
 @Data

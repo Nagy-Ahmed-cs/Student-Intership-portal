@@ -1,8 +1,8 @@
 package com.Spring.Student.Internship.Portal.Services.Interfaces;
 
-import com.Spring.Student.Internship.Portal.Model.Dtos.StudentReqDto;
-import com.Spring.Student.Internship.Portal.Model.Dtos.StudentResDto;
-import com.Spring.Student.Internship.Portal.Model.Entites.Student;
+import com.Spring.Student.Internship.Portal.Model.Dtos.StudentDtos.StudentReqDto;
+import com.Spring.Student.Internship.Portal.Model.Dtos.StudentDtos.StudentResDto;
+import com.Spring.Student.Internship.Portal.Model.Dtos.StudentDtos.StudentUpdateDto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,4 +11,5 @@ import java.util.List;
 public interface StudentService {
     StudentResDto insert(StudentReqDto dto);
     List<StudentResDto>getStudents();
+    StudentResDto update(StudentUpdateDto dto);
 }

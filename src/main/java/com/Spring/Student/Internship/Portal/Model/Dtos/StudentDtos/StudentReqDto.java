@@ -1,6 +1,5 @@
-package com.Spring.Student.Internship.Portal.Model.Dtos;
+package com.Spring.Student.Internship.Portal.Model.Dtos.StudentDtos;
 
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

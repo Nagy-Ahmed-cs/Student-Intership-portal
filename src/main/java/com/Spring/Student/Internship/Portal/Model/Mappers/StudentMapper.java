@@ -1,7 +1,8 @@
 package com.Spring.Student.Internship.Portal.Model.Mappers;
 
-import com.Spring.Student.Internship.Portal.Model.Dtos.StudentReqDto;
-import com.Spring.Student.Internship.Portal.Model.Dtos.StudentResDto;
+import com.Spring.Student.Internship.Portal.Model.Dtos.StudentDtos.StudentReqDto;
+import com.Spring.Student.Internship.Portal.Model.Dtos.StudentDtos.StudentResDto;
+import com.Spring.Student.Internship.Portal.Model.Dtos.StudentDtos.StudentUpdateDto;
 import com.Spring.Student.Internship.Portal.Model.Entites.Student;
 import org.mapstruct.Mapper;
 
@@ -12,4 +13,5 @@ public interface StudentMapper {
     StudentResDto toResponse(Student student);
     Student toStudent(StudentReqDto dto);
     List<StudentResDto>toResponses (List<Student>students);
+    Student toStudent(StudentUpdateDto dto);
 }
