@@ -25,7 +25,7 @@ public class Company {
     private String filed;
     @CreationTimestamp
     private LocalDateTime createAt;
-    @JsonManagedReference
+    @JsonManagedReference("company-intern")
     @OneToMany(mappedBy = "company")
     private List<Intern>interns;
 

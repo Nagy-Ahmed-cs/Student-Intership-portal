@@ -1,6 +1,7 @@
 package com.Spring.Student.Internship.Portal.Services.Interfaces;
 
 import com.Spring.Student.Internship.Portal.Model.Dtos.InternDtos.InternResDto;
+import com.Spring.Student.Internship.Portal.Model.Dtos.StudentDtos.StudentResDto;
 import com.Spring.Student.Internship.Portal.Model.Entites.Intern;
 import org.springframework.stereotype.Service;
 

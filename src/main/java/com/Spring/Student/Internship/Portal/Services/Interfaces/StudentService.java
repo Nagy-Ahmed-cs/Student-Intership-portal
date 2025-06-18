@@ -12,4 +12,7 @@ public interface StudentService {
     StudentResDto insert(StudentReqDto dto);
     List<StudentResDto>getStudents();
     StudentResDto update(StudentUpdateDto dto);
+    String applyForIntern(Integer studentId , Integer internId);
+    List<StudentResDto> getStudentsForIntern(Integer internId);
+
 }

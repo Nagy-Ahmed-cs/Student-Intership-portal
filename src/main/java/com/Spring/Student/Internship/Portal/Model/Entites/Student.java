@@ -1,5 +1,7 @@
 package com.Spring.Student.Internship.Portal.Model.Entites;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
@@ -12,6 +14,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.cglib.core.Local;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name="Students")
@@ -35,5 +38,14 @@ public class Student {
     @UpdateTimestamp
     private LocalDateTime updateAt;
     private LocalDateTime deleteAt;
+//    @JsonManagedReference("student-intern")
+    @ManyToMany
+    @JoinTable(
+            name="Applications" ,
+            joinColumns=@JoinColumn(name="student_id"),
+            inverseJoinColumns = @JoinColumn(name="intern_id"))
+    @JsonIgnore
+    private List<Intern> interns;
+
 
 }

@@ -5,10 +5,7 @@ import com.Spring.Student.Internship.Portal.Model.Dtos.StudentDtos.StudentResDto
 import com.Spring.Student.Internship.Portal.Model.Dtos.StudentDtos.StudentUpdateDto;
 import com.Spring.Student.Internship.Portal.Services.Interfaces.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,5 +24,13 @@ public class StudentController {
     @GetMapping("/update-profile")
     public StudentResDto update(@RequestBody StudentUpdateDto dto){
         return studentService.update(dto);
+    }
+    @GetMapping("/apply-for-intern")
+    public String applyForIntern(@RequestParam Integer studentId, @RequestParam Integer internId){
+        return studentService.applyForIntern(studentId, internId);
+    }
+    @GetMapping("/get-students-for-intern")
+    public List<StudentResDto>getStudentsIntern(@RequestParam Integer internId){
+        return studentService.getStudentsForIntern(internId);
     }
 }
