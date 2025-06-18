@@ -1,7 +1,6 @@
 package com.Spring.Student.Internship.Portal.Services;
 
 import com.Spring.Student.Internship.Portal.Model.Dtos.InternDtos.InternResDto;
-import com.Spring.Student.Internship.Portal.Model.Dtos.StudentDtos.StudentResDto;
 import com.Spring.Student.Internship.Portal.Model.Entites.Company;
 import com.Spring.Student.Internship.Portal.Model.Entites.Intern;
 import com.Spring.Student.Internship.Portal.Model.Mappers.InternMapper;
@@ -50,6 +49,15 @@ public class InternServiceImpl implements InternService {
         }
     }
 
+    @Override
+    public List<Intern> getInternsForStudent(Integer studentId) {
+        List<Intern>interns=internRepo.findByStudents_StudentId(studentId);
+        if(interns.isEmpty()){
+            System.out.println("\nThis student does not apply for any internships ....\n");
+
+        }
+        return interns;
+    }
 
 
 }

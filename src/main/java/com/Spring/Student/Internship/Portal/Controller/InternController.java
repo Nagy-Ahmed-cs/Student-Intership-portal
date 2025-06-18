@@ -27,4 +27,8 @@ public class InternController {
     public List<InternResDto>getCompanyInterns(@RequestParam Integer companyId){
         return internService.findByCompany_CompanyId(companyId);
     }
+    @GetMapping("/get-interns-for-student")
+    public List<Intern>getInternsForStudent(@RequestParam Integer studentId){
+        return internService.getInternsForStudent(studentId);
+    }
 }
